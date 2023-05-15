@@ -14,21 +14,15 @@ const FriendListItem = ({ item }) => {
   )
 };
 
-const FriendList = ({ friends }) => {
-  return (
-    <ul className={css.friendList}>
-      {friends.map((friendItem) => {
-        return (<FriendListItem key={friendItem.id} item={friendItem} />)
-      })}
-    </ul>)
-};
+
 
 FriendListItem.propTypes = {
-  item: PropTypes.object.isRequired,
+  item: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired
+  }).isRequired
 };
 
-FriendList.propTypes = {
-  friends: PropTypes.array.isRequired,
-};
 
-export default FriendList;
+export default FriendListItem 

@@ -36,7 +36,11 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  stats: PropTypes.object,
+  stats: PropTypes.shape({
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number
+  }).isRequired,
 };
 
 export default Profile;
